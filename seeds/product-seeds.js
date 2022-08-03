@@ -33,6 +33,19 @@ const productData = [
   },
 ];
 
-const seedProducts = () => Product.bulkCreate(productData);
+// const seedProducts = async () => {
+//     for (const { product_name, price, stock, category_id } of productData) {
+//         console.log("seeding one new product");
+        
+//         const newProduct = Product.create({
+//             product_name,
+//             price,
+//             stock,
+//             category_id
+//         });
+//     }
+// }
+
+const seedProducts = async () => await Product.bulkCreate(productData);
 
 module.exports = seedProducts;

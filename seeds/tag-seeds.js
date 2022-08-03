@@ -27,6 +27,15 @@ const tagData = [
   },
 ];
 
-const seedTags = () => Tag.bulkCreate(tagData);
+// const seedTags = async () => {
+//     for (const { tag_name } of tagData) {
+//         console.log("seeding one new Tag");
+//         const newTag = await Tag.create({
+//             tag_name,
+//         });
+//     }
+// }
+
+const seedTags = async () => await Tag.bulkCreate(tagData);
 
 module.exports = seedTags;
